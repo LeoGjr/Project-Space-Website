@@ -1,0 +1,135 @@
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px){
+   .container{
+      margin-inline: 1rem;
+   }
+
+   .home__title{
+      font-size: 1.75rem;
+   }
+}
+
+/* For taller devices */
+@media screen and (min-width: 376px) and (min-height: 800px){
+   .home__container{
+      padding-top: 10rem;
+   }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px){
+   .home__container{
+      grid-template-columns: 400px;
+      justify-content: center;
+   }
+
+   .nav__menu{
+      width: 60%;
+   }
+
+   .home{
+      &__cloud-1{
+         width: 100%;
+         left: 0;
+      }
+      &__cloud-2{
+         width: 80%;
+      }
+   }
+}
+
+@media screen and (min-width: 767px){
+   .home{
+      display: grid;
+      place-content: center;
+      
+      &__container{
+         grid-template-columns: repeat(2, 350px);
+         padding-top: 0;
+      }
+      &__content{
+         text-align: initial;
+      }
+      &__title{
+         margin-inline: 0;
+      }
+   }
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px){
+   .nav{
+      height: calc(var(--header-height) + 2rem);
+      
+      &__toggle,
+      &__close{
+         display: none;
+      }
+      &__menu{
+         width: 100%;
+         display: flex;
+         align-items: center;
+         column-gap: 4.5rem;
+      }
+      &__list{
+         margin-left: auto;
+         flex-direction: row;
+         column-gap: 4.5rem;
+      }
+   }
+}
+
+@media screen and (min-width: 1152px){
+   .container{
+      margin-inline: auto;
+   }
+
+   .home{
+      &__container{
+         grid-template-columns: 460px 650px;
+         align-items: center;
+         z-index: 5;
+      }
+      &__subtitle{
+         font-size: var(--normal-font-size);
+         margin-bottom: .75rem;
+      }
+      &__title{
+         letter-spacing: -3px;
+         margin-bottom: 1rem;
+
+         & img{
+            width: 250px;
+            right: -.75rem;
+         }
+      }
+      &__description{
+         font-size: var(--h3-font-size);
+         margin-bottom: 3rem;
+      }
+      &__images{
+         height: 450px;
+      }
+      &__points{
+         width: 100%;
+         top: -2rem;
+         right: -1rem;
+      }
+      &__rocket{
+         width: 450px;
+      }
+      &__planet-1{
+         width: 210px;
+         left: 5rem;
+      }
+      &__planet-2{
+         width: 130px;
+         right: -2rem;
+      }
+      &__cloud-1,
+      &__cloud-2{
+         bottom: -3rem;
+      }
+   }
+}

@@ -1,0 +1,94 @@
+/*=============== HEADER & NAV ===============*/
+.header{
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background-color: var(--body-color);
+   z-index: var(--z-fixed);
+}
+
+.nav{
+   height: var(--header-height);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   &__logo,
+   &__toggle,
+   &__close{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   &__logo{
+      color: var(--text-color);
+      column-gap: .5rem;
+      font-weight: var(--font-semi-bold);
+
+      & i{
+         font-size: 1.25rem;
+         font-weight: initial;
+      }
+   }
+   &__toggle,
+   &__close{
+      background-color: var(--first-color-alt);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      cursor: pointer;
+   }
+   // Navigation for mobile devices
+   &__menu{
+      @media screen and (max-width: 1023px){
+         position: fixed;
+         top: 0;
+         right: -100%;
+         background-color: var(--body-color);
+         width: 80%;
+         height: 100%;
+         box-shadow: 0 0 16px hsla(268, 58%, 4%, .2);
+         padding: 6rem 3rem;
+         display: flex;
+         flex-direction: column;
+         row-gap: 2.5rem;
+         transition: right .4s;
+      }
+   }
+   &__list{
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.5rem;
+   }
+   &__link{
+      color: var(--text-color);
+      font-weight: var(--font-semi-bold);
+      transition: color .4s;
+      
+      &:hover{
+         color: var(--title-color);
+      }
+   }
+   &__button{
+      display: inline-block;
+      width: max-content;
+      background-color: var(--body-color);
+      border: 2px solid var(--text-color);
+      padding: 1rem 3rem;
+      border-radius: 4rem;
+      color: var(--title-color);
+      font-weight: var(--font-semi-bold);
+   }
+   &__close{
+      position: absolute;
+      top: .75rem;
+      right: 1.5rem;
+   }
+}
+
+/* Show menu */
+.show-menu{
+   right: 0;
+}
